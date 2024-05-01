@@ -1,4 +1,3 @@
-
 $(document).ready(function (){
     $('#pic').on({
         'click': function(){
