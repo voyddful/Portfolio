@@ -1,7 +1,7 @@
 $(document).ready(function (){
     $('#main-logo').click(function(){
         $('#main-logo-text').text(`It's not magic, it's jQuery`)
-        setTimeout(function() {$('#main-logo-text').text(`My Programming Portfolio, including School and Personal Assignments.`)}, 1000) 
+        setTimeout(function() {$('#main-logo-text').text(`My Programming Portfolio, including School assingments, Personal Assignments, a Gallery and a blog.`)}, 1000) 
 
     })
     $('#card1').click(function(){
