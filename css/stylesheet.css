@@ -233,6 +233,13 @@ html, body{
 }
 
 @media (min-width: 767px){
+  .waltuha{
+    width: 100%;
+    height: 25em;
+  }
+}
+
+@media (min-width: 767px){
   .mobileleftpadding{
     padding-right: 10% ;
   }

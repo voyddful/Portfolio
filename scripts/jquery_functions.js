@@ -1,4 +1,19 @@
 $(document).ready(function (){
+    $('#main-logo').click(function(){
+        $('#main-logo-text').text(`It's not magic, it's jQuery`)
+        setTimeout(function() {$('#main-logo-text').text(`My Programming Portfolio, including School and Personal Assignments.`)}, 1000) 
+
+    })
+    $('#card1').click(function(){
+        localStorage.setItem("num", 1)
+        $("html").load("Articles/Article Template.html")
+
+    })
+    $('#card2').click(function(){
+        localStorage.setItem("num", 2)
+        $("html").load("Articles/Article Template.html")
+    })
+    
     $('#pic').on({
         'click': function(){
             switch (Math.round(randomNumber(1, 3))){
@@ -18,21 +33,6 @@ $(document).ready(function (){
         }
     });
         
-    $('#main-logo').click(function(){
-        $('#main-logo-text').text(`It's not magic, it's jQuery`)
-        setTimeout(function() {$('#main-logo-text').text(`My Programming Portfolio, including School and Personal Assignments.`)}, 1000) 
-
-    })
-    $('#card1').click(function(){
-        localStorage.setItem("num", 1)
-        $("html").load("Articles/Article Template.html")
-
-    })
-    $('#card2').click(function(){
-        localStorage.setItem("num", 2)
-        $("html").load("Articles/Article Template.html")
-    })
-    
     randolph(localStorage.getItem("num"))
 })
 function randomNumber(min, max) {
@@ -40,6 +40,7 @@ function randomNumber(min, max) {
 }
  
 function randolph(num){
+    $('#title2').text(articleList["Article" + num]["title"]);
     $('#title').text(articleList["Article" + num]["title"]);
     $('#date').text(articleList["Article" + num]["date"]);
     $('#text').text(articleList["Article" + num]["text"]);
