@@ -1,7 +1,7 @@
 $(document).ready(function (){
     $('#main-logo').click(function(){
         $('#main-logo-text').text(`It's not magic, it's jQuery`)
-        setTimeout(function() {$('#main-logo-text').text(`My Programming Portfolio, including School assingments, Personal Assignments, a Gallery and a blog.`)}, 1000) 
+        setTimeout(function() {$('#main-logo-text').text(`My Programming Portfolio, including School assingments, Personal Assignments, a Gallery and a blog. How exciting!`)}, 1000) 
 
     })
     $('#card1').click(function(){
@@ -16,7 +16,7 @@ $(document).ready(function (){
     
     $('#pic').on({
         'click': function(){
-            switch (Math.round(randomNumber(1, 3))){
+            switch (Math.round(randomNumber(1, 4))){
                 case 1:
                     $('#pic').attr('src', '../images/Outside House.jpg')
                     break;
@@ -25,9 +25,6 @@ $(document).ready(function (){
                     break;
                 case 3:
                     $('#pic').attr('src', '../images/Suit Sitting.jpg')
-                    break;
-                default: 
-                    $('#pic').attr('src', '../images/Outside House.jpg')
                     break;
             }
         }
