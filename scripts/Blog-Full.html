@@ -131,10 +131,9 @@
         <div class="col-auto p-0 rounded-3 " >
             <a id="card1" href="Articles/Article Template.html waltuha"><img class=" waltuha waltuhaa img image rounded-3" style="max-width: 30em; max-height: 35em;" src="../images/Waltuh.webp" ></a>
           </div>
-      </div>
-    
+        </div>
       <div class="row mb-2" id="clone">
-        <div class="col-md-6">
+        <div >
           <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static" id="card2">
               <h3 class="mb-0">The Big Floppa</h3>
@@ -149,22 +148,24 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <h3 class="mb-0">Post title</h3>
-              <div class="mb-1 text-body-secondary">Nov 11</div>
-              <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-                Continue reading
-                <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-              </a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        
+          <div id="app">
+            <div v-for="x in count" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0">{{ x.name }}</h3>
+                <div class="mb-1 text-body-secondary">{{ x.date }}</div>
+                <p class="mb-auto">{{ x.descript }}</p>
+                <a v-bind:id="'card' + x.id" href="Articles/Article Template.html" class="icon-link gap-1 icon-link-hover stretched-link">
+                  Continue reading
+                  <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+                </a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img class="img image" v-bind:src="x.img" height="250em" width="250em">
+              </div>
             </div>
           </div>
-        </div>
+        
       </div>
         <div class="text-center mt-3">
           <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="red" class="align-baseline bi bi-journal-code" viewBox="0 0 16 16">
@@ -259,6 +260,42 @@
       </div>
     </div>
     <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            count: {
+              article1: {
+                id: 3,
+                name: "the bigger floppa",
+                date: "mar 57th",
+                descript: "just a test 1",
+                img: "../images/flopper1.jpg"
+              },
+              article2: {
+                id: 1,
+                name: "the biggerer floppa",
+                date: "mar 57th again",
+                descript: "just a test 12",
+                img: "../../images/flopper2.jpg"
+              },
+              article3: {
+                id: 2,
+                name: "the biggerest floppa",
+                date: "mar 57thonce aain",
+                descript: "just a test 1safh",
+                img: "../../images/flopper3.jpg"
+              }
+
+            }
+          
+          }
+        }
+      })
+
+      app.mount('#app')
+    </script>
 
 </body>
 <!--footer-->
